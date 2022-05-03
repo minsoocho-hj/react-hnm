@@ -1,0 +1,62 @@
+.login {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 2rem;
+	font-size: 1.1rem;
+}
+
+.loginStatus {
+	margin-left: 1rem;
+}
+
+.logo {
+	text-align: center;
+}
+
+.img {
+	width: 13rem;
+}
+
+.category {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.ul {
+	display: flex;
+	list-style: none;
+}
+
+.li {
+	padding: 0.8rem;
+}
+
+.search {
+	position: absolute;
+	right: 1rem;
+	padding-right: 3rem;
+}
+.form {
+	border-bottom: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+.input {
+	background-color: transparent;
+	border: none;
+	margin-left: 0.5rem;
+	padding: 0.5rem;
+}
+
+.input:focus {
+	border: none;
+}
+
+.btn {
+	background: transparent;
+	outline: none;
+	border: none;
+}
