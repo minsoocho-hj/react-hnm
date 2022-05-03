@@ -1,0 +1,12 @@
+.card {
+	margin-right: 3rem;
+}
+.img {
+	width: 100%;
+	margin-bottom: 1.2rem;
+}
+
+.desc {
+	display: flex;
+	justify-content: space-between;
+}
