@@ -3,11 +3,15 @@ import Card from '../card/card';
 import styles from './all.module.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const All = () => {
 	const [productsList, setProductsList] = useState([]);
+	const [query, setQuery] = useSearchParams();
 	const getProducts = async () => {
-		let url = `http://localhost:3004/products`;
+		let searchQuery = query.get('q') || '';
+		console.log(setQuery);
+		let url = `http://localhost:3004/products?q=${searchQuery}`;
 		let response = await fetch(url);
 		let data = await response.json();
 		setProductsList(data);
@@ -15,7 +19,7 @@ const All = () => {
 
 	useEffect(() => {
 		getProducts();
-	}, []);
+	}, [query]);
 
 	return (
 		<div className={styles.all}>

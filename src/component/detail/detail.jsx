@@ -38,10 +38,7 @@ const Detail = () => {
 							title='Dropdown button'
 							variant=''
 						>
-							<Dropdown.Item>
-								{console.log(product?.size)}
-								{product?.size[0]}
-							</Dropdown.Item>
+							<Dropdown.Item>{product?.size[0]}</Dropdown.Item>
 							<Dropdown.Item>{product?.size[1]}</Dropdown.Item>
 							<Dropdown.Item>{product?.size[2]}</Dropdown.Item>
 						</DropdownButton> */}

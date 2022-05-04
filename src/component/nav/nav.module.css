@@ -78,3 +78,7 @@
 	outline: none;
 	border: none;
 }
+
+.login span {
+	margin-left: 1rem;
+}

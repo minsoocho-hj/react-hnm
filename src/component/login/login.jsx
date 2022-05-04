@@ -14,7 +14,7 @@ const Login = ({ setAuthenticate }) => {
 	};
 
 	return (
-		<Container>
+		<Container className={styles.container}>
 			<Row className='justify-content-md-center'>
 				<Col lg={6} md={8} sm={10}>
 					<Form onSubmit={onLogin}>

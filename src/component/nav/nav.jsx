@@ -2,7 +2,8 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import styles from './nav.module.css';
 
 const Nav = ({ authenticate, setAuthenticate }) => {
@@ -21,6 +22,19 @@ const Nav = ({ authenticate, setAuthenticate }) => {
 
 	const goToMain = () => {
 		navigate('/');
+	};
+
+	const inputRef = useRef();
+	let [searchParams, setSearchParams] = useSearchParams();
+
+	const onSearch = (e) => {
+		if (e.code === 'Enter') {
+			e.preventDefault();
+			let params = inputRef.current.value;
+			navigate(`/?q=${params}`);
+		} else {
+			return;
+		}
 	};
 
 	return (
@@ -59,7 +73,13 @@ const Nav = ({ authenticate, setAuthenticate }) => {
 				<div className={styles.search}>
 					<form className={styles.form}>
 						<FontAwesomeIcon icon={faSearch} />
-						<input className={styles.input} type='text' placeholder='Search' />
+						<input
+							className={styles.input}
+							type='text'
+							placeholder='Search'
+							onKeyPress={(e) => onSearch(e)}
+							ref={inputRef}
+						/>
 					</form>
 				</div>
 			</div>
