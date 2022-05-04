@@ -10,7 +10,7 @@ const Detail = () => {
 	const [product, setProduct] = useState([]);
 
 	const getDetail = async () => {
-		let url = `http://localhost:3004/products/${id}`;
+		let url = `https://my-json-server.typicode.com/minsoocho-hj/react-hnm/products/${id}`;
 		let res = await fetch(url);
 		let data = await res.json();
 		setProduct(data);
